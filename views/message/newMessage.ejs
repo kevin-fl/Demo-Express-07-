@@ -1,0 +1,26 @@
+<%- include('../partials/_header.ejs') %>
+
+<h1>Ajout d un message </h1>
+
+<form method="post">
+    <div>
+        <label for="pseudo">Pseudo : </label>
+        <input type="text" name="pseudo" id="pseudo" required>
+        <% if(error && error['msg'])
+    </div>
+    <div>
+        
+        <label for="mqg">Message: </label>
+        <input type="text" name="msg" id="msg" required>
+        
+    </div>
+    </div>
+    <button type="submit">ENVOYER</button>
+    </div>
+</form>
+
+
+
+
+
+<%- include('../partials/_footer.ejs') %>

@@ -1,0 +1,17 @@
+Les dépendances nécessaires :
+
+-express : Framework js pr créer des web serveurs 
+-ejs     : Moteur de template 
+-Yup     : Bibliotheque de validation de Form
+
+-mssql   : Bibliotheque de connection a 'SQL server' 
+-nodemon : Auto run de script (DEV utilisation only not when u want to use it as a prod!!!)
+
+-dotenv-flow : Gestion des fichiers '.env'
+-cross-env : Permet de définir la valeur de 'NODE_ENV'
+
+.env = acces rapide au environnemnts
+
+Les commandes sont : 
+npm install (or) i express ejs yup mssql 
+npm install (or) i nodemon --save-dev

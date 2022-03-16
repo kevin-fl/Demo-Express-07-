@@ -8,6 +8,11 @@ const messageRouter = require('./routes/message-router');
 require('dotenv-flow').config();
 //console.log(process.env);
 
+
+//Test de la base de données
+require('./utils/db-utils').testDbConnection();
+
+
 //Variable de config
 const {PORT, NODE_ENV } = process.env;
 //const port = 8080;
@@ -23,7 +28,7 @@ app.set('view engine' , 'ejs');
 app.set('views', './views');
 
 //Ajout des dossiers statiques
-app.use(express.static)
+app.use(express.static('public'))
 
 //Ajout du middleware pour les données ""
 app.use(express.urlencoded({extended: true}))
@@ -42,9 +47,10 @@ res.status(404).send('Perdu ?');
 //demarrage du server 
 
 app.listen(PORT , () => {
-    console.log(`Server up on port ${PORT} [${NODE_ENV}]`);             // ${port}    [${mode}]
+    console.log(`Server up on port ${PORT} [${NODE_ENV}]`);              // ${port}    [${mode}]
 
 });
+
 
 
 

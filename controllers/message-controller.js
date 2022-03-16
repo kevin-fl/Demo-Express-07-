@@ -22,7 +22,7 @@ const messageController = {
         //Permet d'afficher la page avec le formulaire
 
        // res.sendStatus(501);
-    res.render('message/newMessage' , { title: 'Nouveau message' , errors: null, data: {pseudo: ''} }); 
+    res.render('message/newMessage' , { title: 'Nouveau message' , errors: null, data: {pseudo: {} }}); 
     },
 
 

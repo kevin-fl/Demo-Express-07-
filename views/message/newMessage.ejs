@@ -6,7 +6,7 @@
     <div>
         <label for="pseudo">Pseudo : </label>
         <input type="text" name="pseudo" id="pseudo" value="<%= data['pseudo'] %>" required>
-        <% if(error && errors['pseudo']) { %>
+        <% if(errors && errors['pseudo']) { %>
         <span class="label-error">le pseudo est requis !</span>
         <% } %>
     </div>
@@ -14,7 +14,7 @@
         
         <label for="msg">Message: </label>
         <input type="text" name="msg" id="msg" value="<%= data['msg'] %>" required>
-        <% if (error &&['msg']) { %>
+        <% if (errors && errors['msg']) { %>
             <span class="label-error">Le message est requis !</span>
         <% } %>
     </div>

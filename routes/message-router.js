@@ -3,7 +3,7 @@ const messageRouter = require ('express').Router();
 
 messageRouter.get('/message' , messageController.index);
 
-messageRouter.get('/message/:id[0-9]+)' , messageController.detail);
+messageRouter.get('/message/:id([0-9]+)' , messageController.detail);
 
 messageRouter.get('/message/new' , messageController.messageFormGET);
 messageRouter.post('/message/new' , messageController.messageFormPOST);

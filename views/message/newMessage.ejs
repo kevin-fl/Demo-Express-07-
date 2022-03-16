@@ -5,14 +5,18 @@
 <form method="post">
     <div>
         <label for="pseudo">Pseudo : </label>
-        <input type="text" name="pseudo" id="pseudo" required>
-        <% if(error && error['msg'])
+        <input type="text" name="pseudo" id="pseudo" value="<%= data['pseudo'] %>" required>
+        <% if(error && errors['pseudo']) { %>
+        <span class="label-error">le pseudo est requis !</span>
+        <% } %>
     </div>
     <div>
         
-        <label for="mqg">Message: </label>
-        <input type="text" name="msg" id="msg" required>
-        
+        <label for="msg">Message: </label>
+        <input type="text" name="msg" id="msg" value="<%= data['msg'] %>" required>
+        <% if (error &&['msg']) { %>
+            <span class="label-error">Le message est requis !</span>
+        <% } %>
     </div>
     </div>
     <button type="submit">ENVOYER</button>

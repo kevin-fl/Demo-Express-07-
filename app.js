@@ -22,6 +22,11 @@ const app= express();
 app.set('view engine' , 'ejs');
 app.set('views', './views');
 
+//Ajout des dossiers statiques
+app.use(express.static)
+
+//Ajout du middleware pour les données ""
+app.use(express.urlencoded({extended: true}))
 
 // Ajouter le systeme de router
 app.use(homeRouter);

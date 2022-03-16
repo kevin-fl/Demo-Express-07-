@@ -1,5 +1,5 @@
 const mssql = require ('mssql');
-const connectionString = process.env.DB_CONNECTIONSTRING;
+//const connectionString = process.env.DB_CONNECTIONSTRING;
 
 
 
@@ -11,7 +11,7 @@ const connectionString = process.env.DB_CONNECTIONSTRING;
 
 const createDbConnection= async () => {
 
-        const createdb = await mssql.connect(connectionString);                    // ou supprimer const connectionString et la rajouter ligne 14 await mssql.connect(process.env.DB_CONNECTIONSTRING)
+        const createdb = await mssql.connect(process.env.DB_CONNECTIONSTRING);                    // ou supprimer const connectionString et la rajouter ligne 14 await mssql.connect(process.env.DB_CONNECTIONSTRING)
         return createdb;
 
     };

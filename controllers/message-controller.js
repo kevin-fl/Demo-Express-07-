@@ -1,11 +1,19 @@
 const { messageSchema } = require("../data-validators/message-validator");
+const messageModel = require('../models/message-model');
+const {getErrorMessage} =require('./utils/error-utils');
 
 const messageController = {
-
     
     index: (req, res) => {
 
-        res.render('message/index' , { title: 'liste des messages' });
+        //Affichage de la liste des messages
+        messageModel.getAll();
+        .then(messages => {
+            console.log(messages);
+            res.render();
+
+        })
+        res.render('message/index' , { title: `liste des messages ${messages}` });
 
     },
 
@@ -30,11 +38,16 @@ const messageController = {
     //POST
     messageFormPOST:(req, res) => {
         //permet de traiter les données du formulaire
-        console.log(req.body);
+      //  console.log(req.body);
 
     messageSchema.validate(req.body, {abortEarly: false })
         .then((data) => {
             console.log('data' , data);
+            messageModel.insert({
+                pseudo: data.pseudo,
+                content: data.msg
+            }).then(id => {
+                console.log(`Message ${id}` );
             // TODO Ajouter dans la DB
 
           //  res.sendStatus(501);

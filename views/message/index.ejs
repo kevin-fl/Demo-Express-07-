@@ -1,6 +1,15 @@
 <%- include('../partials/_header.ejs') %>
 
 <h1>La liste des messages</h1>
+<dl>
+    <% for (const message of messages) { %>
+    <dt> <%= message.pseudo %> </dt>
+    <dd><%= message.Content %> </dd>
+    <% } %>
+    }
+
+
+</dl>
 TODO : Récuperer les données !!!
 
 <%- include('../partials/_footer.ejs') %>

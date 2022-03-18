@@ -19,7 +19,30 @@ const messageController = {
 
     detail: (req,res) => {
 //affichage le detail d'un message
-        res.render('message/detail' , {title: `Detail du message ${id}` });
+
+        const { id } = req.params;
+
+        //recup les datas 
+        messageModel.getById(id)
+        .then(message => {
+
+            if(!message)//  not message
+                return res.sendStatus(404);
+
+        })
+
+        const optionDate = {
+            dateStyle: 'long',
+            timeStyle: 'short'
+
+        }
+
+        res.render('message/detail' ,{
+            title: `Detail du message ${id}`,
+            message,
+            formattedCreateDate: message.createDate.toLocaleString('fr-be', optionDate )
+        });
+        
 
 
     },

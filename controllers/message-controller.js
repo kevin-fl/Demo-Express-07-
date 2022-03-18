@@ -1,13 +1,13 @@
 const { messageSchema } = require("../data-validators/message-validator");
 const messageModel = require('../models/message-model');
-const {getErrorMessage} =require('./utils/error-utils');
+const {getErrorMessage} =require('../utils/error-utils');
 
 const messageController = {
     
     index: (req, res) => {
 
         //Affichage de la liste des messages
-        messageModel.getAll();
+        messageModel.getAll()
         .then(messages => {
             console.log(messages);
             res.render();
@@ -52,7 +52,7 @@ const messageController = {
 
           //  res.sendStatus(501);
         res.redirect('/message');
-        })
+        })})
 
         .catch((validationError) => {
           //  console.log(err);
@@ -62,10 +62,10 @@ const messageController = {
             res.render('message/newMessage' , { title: 'Corrige ton message',errors, data })
         });
     }
-};
+
           //  res.sendStatus(501);
 
-
+}
 
     module.exports = messageController;
 
